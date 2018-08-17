@@ -1,1 +1,5 @@
 # quickSort
+
+# bubbleSort
+
+# selectSort
