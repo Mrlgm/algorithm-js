@@ -1,8 +1,4 @@
-window.quickSort = quickSort
-window.bubbleSort = bubbleSort
-window.selectSort = selectSort
-
-function quickSort(arr = []) {
+window.algorithm.quickSort = function (arr = []) {
   if (arr.length <= 1) {
     return arr
   }
@@ -21,7 +17,7 @@ function quickSort(arr = []) {
   return quickSort(left).concat(pivot, quickSort(right))
 }
 
-function bubbleSort(arr = []) {
+window.algorithm.bubbleSort = function (arr = []) {
   let temp
   for (let i = arr.length - 1; 0 < i; i--) {
     for (let j = 0; j < i; j++) {
@@ -35,7 +31,7 @@ function bubbleSort(arr = []) {
   return arr
 }
 
-function selectSort(arr = []) {
+window.algorithm.selectSort = function (arr = []) {
   let temp
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i
