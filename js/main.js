@@ -81,3 +81,45 @@ window.algorithm.quickSort1 = function (array) {
   sort(array, 0, array.length - 1);
   return array;
 }
+
+//ES5 继承
+function Human(name) {
+  this.name = name
+}
+Human.prototype.run = function () {
+  console.log("我叫" + this.name + "，我在跑")
+  return undefined
+}
+
+function Man(name) {
+  Human.call(this, name)
+  this.gender = '男'
+}
+
+var f = function () {}
+f.prototype = Human.prototype
+Man.prototype = new f()
+
+Man.prototype.fight = function () {
+  console.log('糊你熊脸')
+}
+
+//ES6 继承
+class Human {
+  constructor(name) {
+    this.name = name
+  }
+  run() {
+    console.log("我叫" + this.name + "，我在跑")
+    return undefined
+  }
+}
+class Man extends Human {
+  constructor(name) {
+    super(name)
+    this.gender = '男'
+  }
+  fight() {
+    console.log('糊你熊脸')
+  }
+}
