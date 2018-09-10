@@ -123,3 +123,15 @@ class Man extends Human {
     console.log('糊你熊脸')
   }
 }
+
+//计数数组去重
+let array = [2, 3, 4, 4, 2, 5, 6, 7]
+let hashTab = {}
+for (let i = 0; i < array.length; i++) {
+  if (array[i] in hashTab) {
+
+  } else {
+    hashTab[array[i]] = true
+  }
+}
+console.log(Object.keys(hashTab))
