@@ -1,3 +1,5 @@
+window.algorithm = function(){}
+
 window.algorithm.quickSort = function (arr = []) {
   if (arr.length <= 1) {
     return arr
@@ -49,6 +51,18 @@ window.algorithm.selectSort = function (arr = []) {
   return arr
 }
 
+window.algorithm.insertionSort = function (arr = []) {
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (arr[i] < arr[j]) {
+        arr.splice(j,0,arr[i])
+        arr.splice(i+1,1)
+        break 
+      }
+    }
+  }
+}
+
 window.algorithm.quickSort1 = function (array) {
   // 交换元素位置
   function swap(array, i, k) {
@@ -82,7 +96,7 @@ window.algorithm.quickSort1 = function (array) {
   return array;
 }
 
-//ES5 继承
+/* //ES5 继承
 function Human(name) {
   this.name = name
 }
@@ -135,3 +149,5 @@ for (let i = 0; i < array.length; i++) {
   }
 }
 console.log(Object.keys(hashTab))
+
+// */
