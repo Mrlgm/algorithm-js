@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+
+  </div>
+  <a href="/hhh" target="_self">跳转到hhh页面</a>
+  <a href="/" target="_self">跳转到首页</a>
+  <script>
+    let links = document.querySelectorAll('a')
+    links.forEach((item) => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault()
+        location.hash = `#${e.target.pathname}`
+        console.log(e.target.pathname)
+      })
+    })
+
+    if (window.location.hash === '#/') {
+      root.innerText = '这是主页'
+    } else if (window.location.hash === '#/hhh') {
+      root.innerText = '这是hhh页'
+    }
+
+    window.addEventListener('hashchange', function (e) {
+      let arr = e.newURL.split('#')
+      console.log(arr)
+      if (arr[1] === '/') {
+        root.innerText = '这是主页'
+      } else if (arr[1] === '/hhh') {
+        root.innerText = '这是hhh页'
+      }
+    })
+  </script>
+</body>
+
+</html>
